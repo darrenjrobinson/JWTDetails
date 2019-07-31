@@ -3,6 +3,7 @@ Decode a JWT Access Token and convert to a PowerShell Object.
 PowerShell Object also includes the JWT Signature (sig), JWT Token Expiry (expiryDateTime) and JWT Token time to expiry (timeToExpiry).
 
 [Available in the PowerShell Gallery](https://www.powershellgallery.com/packages/JWTDetails)
+[Associated Blogpost](https://blog.darrenjrobinson.com)
 
 ## Install
 Install direct from the PowerShell Gallery (Powershell 5.x and above)
