@@ -1,7 +1,7 @@
 function get-JWTDetails {
     [cmdletbinding()]
     param(
-        [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
+        [Parameter(Mandatory = $true, ValueFromPipeline = $true, Position = 0)]
         [string]$token
     )
 
