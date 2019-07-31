@@ -58,11 +58,11 @@ sig             : PUpl4F61Ql12nfxkLDeTA2Tucb7KfzrfbmI1+gNDPFfbe8WD3wlfr0EK2M89JN
                   Zou1u/NrBvEakiiZdCJRKOB9nf4/euHHfYJNSKtPhLiPImyc137JxbPUG/MPjAQBkBPuUCyYtmFoBynGvsoSVvzZ6JQS5O2nxZPAqOFUzj5q3fjhh/oqPpu/6Qw1bdt3O37HgMLn 
                   UrBK3psjwUfP/X6//L6S1FwomenNoFVeKcUNcM5Ne6loDwRSW1Ig8XHXmN4GnWQAw7OwMA==
 expiryDateTime  : 30/07/2019 6:42:57 PM
-timeToExpiry    : -00:32:56.1103767```
+timeToExpiry    : -00:32:56.1103767
 
 ## EXAMPLE
 
-```PS> Get-JWTDetails($myAccessToken)
+PS> Get-JWTDetails($myAccessToken)
 
 tenant_id             : cd988f3c-710c-43eb-9e25-123456789
 internal              : False
