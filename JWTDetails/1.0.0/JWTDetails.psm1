@@ -1,6 +1,9 @@
 function get-JWTDetails {
     [cmdletbinding()]
-    param([Parameter(Mandatory = $true)][string]$token)
+    param(
+        [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
+        [string]$token
+    )
 
     <#
 .SYNOPSIS
@@ -25,7 +28,7 @@ None. You cannot pipe objects to get-JWTDetails.
 
 PowerShell Object
 
-.SYNTAX 
+.SYNTAX
 
 Get-JWTDetails(accesstoken)
 
@@ -50,7 +53,7 @@ name            : Darren J Robinson
 oid             : 5fddc979-ef08-4947-abcd-2430bc1234e0
 platf           : 3
 puid            : C1373BFDAE1A48F6
-scp             : AuditLog.Read.All Directory.Read.All Reports.Read.All       
+scp             : AuditLog.Read.All Directory.Read.All Reports.Read.All
                   User.Read User.Read.All
 sub             : _31PG9C137LXuAkWDB93YM_eoRl9auP21qHOn5hO-s9w
 tid             : 74ea519d-9792-4aa9-c137-b7cab8204aaa
@@ -100,12 +103,12 @@ http://blog.darrenjrobinson.com
             0 { break }
             2 { $data += '==' }
             3 { $data += '=' }
-        }        
-    } 
+        }
+    }
 
     $decodedToken = [System.Text.Encoding]::UTF8.GetString([convert]::FromBase64String($data)) | ConvertFrom-Json 
     Write-Verbose "JWT Token:"
-    Write-Verbose $decodedToken 
+    Write-Verbose $decodedToken
 
     # Signature
     foreach ($i in 0..2) {
@@ -117,21 +120,22 @@ http://blog.darrenjrobinson.com
         }
     }
     Write-Verbose "JWT Signature:"
-    Write-Verbose $sig  
-    $decodedToken | Add-Member -Type NoteProperty -Name "sig" -Value $sig 
+    Write-Verbose $sig
+    $decodedToken | Add-Member -Type NoteProperty -Name "sig" -Value $sig
 
     # Convert Expiry time to PowerShell DateTime
-    $orig = (Get-Date -Year 1970 -Month 1 -Day 1 -hour 0 -Minute 0 -Second 0 -Millisecond 0)         
-    $timeZone = Get-TimeZone     
-    $utcTime = $orig.AddSeconds($decodedToken.exp)    
-    $localTime = $utcTime.AddHours($timeZone.BaseUtcOffset.Hours)     # Return local time      
-    $decodedToken | Add-Member -Type NoteProperty -Name "expiryDateTime" -Value $localTime 
+    $orig = (Get-Date -Year 1970 -Month 1 -Day 1 -hour 0 -Minute 0 -Second 0 -Millisecond 0)
+    $timeZone = Get-TimeZone
+    $utcTime = $orig.AddSeconds($decodedToken.exp)
+    $hoursOffset = $timeZone.GetUtcOffset($(Get-Date)).hours #Daylight saving needs to be calculated
+    $localTime = $utcTime.AddHours($hoursOffset)     # Return local time,
+    $decodedToken | Add-Member -Type NoteProperty -Name "expiryDateTime" -Value $localTime
     
-    # Time to Expiry 
+    # Time to Expiry
     $timeToExpiry = ($localTime - (get-date))
-    $decodedToken | Add-Member -Type NoteProperty -Name "timeToExpiry" -Value $timeToExpiry 
+    $decodedToken | Add-Member -Type NoteProperty -Name "timeToExpiry" -Value $timeToExpiry
 
-    return $decodedToken    
+    return $decodedToken
 }
 
 
