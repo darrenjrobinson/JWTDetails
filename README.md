@@ -25,7 +25,7 @@ Get-JWTDetails(accesstoken)
 
 ## EXAMPLE
 
-PS> Get-JWTDetails('eyJ0eXAiOi........XmN4GnWQAw7OwMA')
+```PS> Get-JWTDetails('eyJ0eXAiOi........XmN4GnWQAw7OwMA')
 
 aud             : https://graph.microsoft.com
 iss             : https://sts.windows.net/74ea519d-1234-4aa9-86d9-b7cab8204aaa/
@@ -58,11 +58,11 @@ sig             : PUpl4F61Ql12nfxkLDeTA2Tucb7KfzrfbmI1+gNDPFfbe8WD3wlfr0EK2M89JN
                   Zou1u/NrBvEakiiZdCJRKOB9nf4/euHHfYJNSKtPhLiPImyc137JxbPUG/MPjAQBkBPuUCyYtmFoBynGvsoSVvzZ6JQS5O2nxZPAqOFUzj5q3fjhh/oqPpu/6Qw1bdt3O37HgMLn 
                   UrBK3psjwUfP/X6//L6S1FwomenNoFVeKcUNcM5Ne6loDwRSW1Ig8XHXmN4GnWQAw7OwMA==
 expiryDateTime  : 30/07/2019 6:42:57 PM
-timeToExpiry    : -00:32:56.1103767
+timeToExpiry    : -00:32:56.1103767```
 
 ## EXAMPLE
 
-PS> Get-JWTDetails($myAccessToken)
+```PS> Get-JWTDetails($myAccessToken)
 
 tenant_id             : cd988f3c-710c-43eb-9e25-123456789
 internal              : False
@@ -81,4 +81,4 @@ timeToExpiry          : -00:57:37.4457299
 
 ## LINK
 
-http://blog.darrenjrobinson.com
+http://blog.darrenjrobinson.com```
