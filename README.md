@@ -1,5 +1,6 @@
 # JWTDetails
-Decode a JWT Access Token and convert to a PowerShell Object. PowerShell Object also includes the JWT Signature (sig), JWT Token Expiry (expiryDateTime) and JWT Token time to expiry (timeToExpiry).
+Decode a JWT Access Token and convert to a PowerShell Object. 
+PowerShell Object also includes the JWT Signature (sig), JWT Token Expiry (expiryDateTime) and JWT Token time to expiry (timeToExpiry).
 
 
 ## DESCRIPTION
@@ -21,7 +22,7 @@ PowerShell Object
 
 ## SYNTAX 
 
-Get-JWTDetails(accesstoken)
+Get-JWTDetails('accesstoken')
 
 ## EXAMPLE
 
