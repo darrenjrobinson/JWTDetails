@@ -35,7 +35,8 @@ Get-JWTDetails('accesstoken')
 
 ## EXAMPLE
 
-```PS> Get-JWTDetails('eyJ0eXAiOi........XmN4GnWQAw7OwMA')
+```
+PS> Get-JWTDetails('eyJ0eXAiOi........XmN4GnWQAw7OwMA')
 or
 PS> 'eyJ0eXAiOi........XmN4GnWQAw7OwMA' | Get-JWTDetails
 
