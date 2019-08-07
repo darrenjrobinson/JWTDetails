@@ -1,6 +1,6 @@
 @{
     RootModule        = 'JWTDetails.psm1'
-    ModuleVersion     = '1.0.0'
+    ModuleVersion     = '1.0.1'
     GUID              = 'fc04acca-f218-46c3-9c60-2ba5fbcc8d3c'
     Author            = 'Darren J Robinson'
     CompanyName       = 'Community'
@@ -8,7 +8,7 @@
     Description       = 'Decode a JWT Access Token and convert to a PowerShell Object. JWT Access Token updated to include the JWT Signature (sig), JWT Token Expiry (expiryDateTime) and JWT Token time to expiry (timeToExpiry).'
     PowerShellVersion = '5.0.0'
     RequiredModules   = ''
-    FunctionsToExport = @('get-JWTDetails')
+    FunctionsToExport = @('Get-JWTDetails')
     CmdletsToExport   = @()
     VariablesToExport = @()
     AliasesToExport   = @()

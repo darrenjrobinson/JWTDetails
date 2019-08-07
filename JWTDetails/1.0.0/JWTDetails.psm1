@@ -1,4 +1,4 @@
-function get-JWTDetails {
+function Get-JWTDetails {
     [cmdletbinding()]
     param(
         [Parameter(Mandatory = $true, ValueFromPipeline = $true, Position = 0)]
@@ -22,7 +22,7 @@ The JWT Access Token to decode and udpate with expiry time and time to expiry
 
 .INPUTS
 
-None. You cannot pipe objects to get-JWTDetails.
+Token from Pipeline 
 
 .OUTPUTS
 
@@ -35,6 +35,8 @@ Get-JWTDetails(accesstoken)
 .EXAMPLE
 
 PS> Get-JWTDetails('eyJ0eXAiOi........XmN4GnWQAw7OwMA')
+or
+PS> 'eyJ0eXAiOi........XmN4GnWQAw7OwMA' | Get-JWTDetails
 
 aud             : https://graph.microsoft.com
 iss             : https://sts.windows.net/74ea519d-1234-4aa9-86d9-b7cab8204aaa/
@@ -72,6 +74,8 @@ timeToExpiry    : -00:32:56.1103767
 .EXAMPLE
 
 PS> Get-JWTDetails($myAccessToken)
+or 
+PS> $myAccessToken | Get-JWTDetails
 
 tenant_id             : cd988f3c-710c-43eb-9e25-123456789
 internal              : False
@@ -90,7 +94,9 @@ timeToExpiry          : -00:57:37.4457299
 
 .LINK
 
-http://blog.darrenjrobinson.com
+https://blog.darrenjrobinson.com
+https://blog.darrenjrobinson.com/jwtdetails-powershell-module-for-decoding-jwt-access-tokens-with-readable-token-expiry-time/ 
+
 #>
 
 
@@ -138,6 +144,5 @@ http://blog.darrenjrobinson.com
     return $decodedToken
 }
 
-
-Export-ModuleMember -Function 'get-JWTDetails'
+Export-ModuleMember -Function 'Get-JWTDetails'
 
