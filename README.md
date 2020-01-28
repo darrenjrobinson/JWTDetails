@@ -93,10 +93,9 @@ jti                   : 1282411c-ffff-1111-a9d0-f9314a123c7a
 sig                   : SWPhCswizzleQWdM4K8A8HotX5fP/PT8kBWnaaAf2g6k=
 expiryDateTime        : 30/07/2019 6:18:52 PM
 timeToExpiry          : -00:57:37.4457299
-
-## LINK
-
-https://blog.darrenjrobinson.com 
-https://blog.darrenjrobinson.com/jwtdetails-powershell-module-for-decoding-jwt-access-tokens-with-readable-token-expiry-time/ 
-
 ```
+
+## LINKS
+* [Darren Robinson's blog](https://blog.darrenjrobinson.com)
+* [Associated JWTDetails Blogpost](https://blog.darrenjrobinson.com/jwtdetails-powershell-module-for-decoding-jwt-access-tokens-with-readable-token-expiry-time/)
+* [Follow Darren on Twitter](https://twitter.com/darrenjrobinson)![](http://twitter.com/favicon.ico)
