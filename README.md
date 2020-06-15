@@ -1,4 +1,6 @@
 # JWTDetails
+[![PSGallery Version](https://img.shields.io/powershellgallery/v/JWTDetails.svg?style=flat&logo=powershell&label=PSGallery%20Version)](https://www.powershellgallery.com/packages/JWTDetails) [![PSGallery Downloads](https://img.shields.io/powershellgallery/dt/JWTDetails.svg?style=flat&logo=powershell&label=PSGallery%20Downloads)](https://www.powershellgallery.com/packages/JWTDetails)
+
 Decode a JWT Access Token and convert to a PowerShell Object. 
 PowerShell Object also includes the JWT Signature (sig), JWT Token Expiry (expiryDateTime) and JWT Token time to expiry (timeToExpiry).
 
@@ -72,9 +74,9 @@ sig             : PUpl4F61Ql12nfxkLDeTA2Tucb7KfzrfbmI1+gNDPFfbe8WD3wlfr0EK2M89JN
                   UrBK3psjwUfP/X6//L6S1FwomenNoFVeKcUNcM5Ne6loDwRSW1Ig8XHXmN4GnWQAw7OwMA==
 expiryDateTime  : 30/07/2019 6:42:57 PM
 timeToExpiry    : -00:32:56.1103767
-
+```
 ## EXAMPLE
-
+```
 PS> Get-JWTDetails($myAccessToken)
 or 
 PS> $myAccessToken | Get-JWTDetails
@@ -96,6 +98,7 @@ timeToExpiry          : -00:57:37.4457299
 ```
 
 ## LINKS
+
 * [Darren Robinson's blog](https://blog.darrenjrobinson.com)
 * [Associated JWTDetails Blogpost](https://blog.darrenjrobinson.com/jwtdetails-powershell-module-for-decoding-jwt-access-tokens-with-readable-token-expiry-time/)
 * [Follow Darren on Twitter](https://twitter.com/darrenjrobinson)![](http://twitter.com/favicon.ico)
